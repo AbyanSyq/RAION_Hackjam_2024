@@ -1,5 +1,5 @@
 using UnityEngine;
 public interface ITransmitter
 {    
-    public void Transmit();
+    public void Transmit(bool press = true);
 }

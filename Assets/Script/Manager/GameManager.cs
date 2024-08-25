@@ -42,41 +42,28 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         }
     }
     public IEnumerator To2D(){
-        // Debug.Log("change to 2d");
         player3D.Activate(false);
         foreach (MultiDimentionBase multiDimention in multiDimentionBases)
         {
             multiDimention.To2D();
         }
 
-        // ObstacleKinematic(true);
 
 
         yield return null;
         player2D.Activate(true);
         is2D = true;
-        // Debug.Log("changed to 2d");
     }
     public IEnumerator To3D(){
-        // Debug.Log("change to 3d");
         player2D.Activate(false);
         foreach (MultiDimentionBase multiDimention in multiDimentionBases)
         {
             multiDimention.To3D();
         }
 
-        // ObstacleKinematic(false);
 
         yield return null;
         player3D.Activate(true);
         is2D = false;
-        // Debug.Log("changed to 3d");
     }
-    // public void ObstacleKinematic(bool isKinematic){
-    //     GameObject[] obstacle = GameObject.FindGameObjectsWithTag("Obstacle");
-    //     foreach (GameObject obs in obstacle){
-    //         obs.GetComponent<Rigidbody>().isKinematic = isKinematic;
-     
-    //     }
-    // }
 }

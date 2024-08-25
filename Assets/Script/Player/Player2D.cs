@@ -26,9 +26,9 @@ public class Player2D : PlayerBase
 
     private void FixedUpdate()
     {
-        Movement();
         GroundCheck();
         ModifyJump(); // Adjust the fall and jump arc
+        Movement();
     }
 
     private void Update()
@@ -37,16 +37,19 @@ public class Player2D : PlayerBase
         {
             Jump();
         }
-    }
-
-    public override void Movement()
-    {
-        base.Movement();
         if (isActive)
         {
             direction.x = Input.GetAxisRaw("Horizontal");
         }
+    }
+    public override void Activate(bool isActive)
+    {
+        rb.isKinematic = !isActive;
+        base.Activate(isActive);
+    }
 
+    public override void Movement()
+    {
         transform.position += direction * Time.fixedDeltaTime * 10;
     }
 

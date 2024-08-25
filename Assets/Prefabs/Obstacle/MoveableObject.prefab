@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9028372061795237525}
   - component: {fileID: 5083668293116470053}
+  - component: {fileID: 7753121230250953891}
   m_Layer: 0
   m_Name: MoveableObject
   m_TagString: Untagged
@@ -45,7 +46,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f4be149bc616bf45828eb0bbd0368c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 6441291204142503591}
+  rb: {fileID: 7753121230250953891}
+--- !u!54 &7753121230250953891
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5010565355443703908}
+  serializedVersion: 4
+  m_Mass: 2
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 116
+  m_CollisionDetection: 2
 --- !u!1 &6988853005366676834
 GameObject:
   m_ObjectHideFlags: 0
@@ -57,7 +85,6 @@ GameObject:
   - component: {fileID: 6760294513005700921}
   - component: {fileID: 5434358987996977895}
   - component: {fileID: 5991229416237660635}
-  - component: {fileID: 6667242973048103613}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -130,27 +157,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6667242973048103613
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6988853005366676834}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7724936703243964389
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,7 +169,6 @@ GameObject:
   - component: {fileID: 1710288578299009939}
   - component: {fileID: 719881483129050692}
   - component: {fileID: 7264342971321883003}
-  - component: {fileID: 6441291204142503591}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -258,30 +263,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &6441291204142503591
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7724936703243964389}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 116
-  m_CollisionDetection: 1
