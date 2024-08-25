@@ -12,7 +12,7 @@ public abstract class PlayerBase : MonoBehaviour
 
     }
     public virtual void Activate(bool isActive){
-        this.isActive = isActive;
         direction = Vector3.zero;
+        this.isActive = isActive;
     }
 }
