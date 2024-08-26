@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 public enum UI{
     GAMEPLAY,
     MAINMENU,
+    LEVELMENU,
     PAUSE,
     SETTINGS,
     GAMEOVER,
@@ -15,28 +17,39 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
     public UI currentUI;
 
     [Header("UI Prefabs")]
+    [SerializeField] private UIMainMenu mainMenuPrefabs;
+    [SerializeField] private UILevelMenu levelMenuPrefabs;
+    [SerializeField] private UIPauseMenu pauseMenuPrefabs;
 
     [Header("UI")]
+    [SerializeField] private UIMainMenu mainMenu;
+    [SerializeField] private UILevelMenu levelMenu;
+    [SerializeField] private UIPauseMenu pauseMenu;
 
     [Header("Atribut[Need To Set]")]
     public Transform parent;
-    public void Start()//sementara pake Start nanti klo udh ada game manager bakal pake Init
+    private void Awake() 
     {
-        
+        base.Awake();
+        mainMenu = Instantiate(mainMenuPrefabs,parent); mainMenu.Hide();
+        levelMenu = Instantiate(levelMenuPrefabs, parent); levelMenu.Hide();
+        pauseMenu = Instantiate(pauseMenuPrefabs,parent); pauseMenu.Hide();
     }
+
     private void Update() {
-        
-        if(Input.GetKeyDown(KeyCode.Escape)){
+        if(Input.GetKeyDown(KeyCode.Escape) && (currentUI == UI.GAMEPLAY || currentUI == UI.PAUSE)){
+            Debug.Log("escape");
             if(currentUI == UI.PAUSE) {
-                ChangeMenu(UI.GAMEPLAY);
-                // GameManager.instance.ResumeGame();
+                ChangeUI(UI.GAMEPLAY);
+                GameManager.instance.PauseGame(false);
             }
             else {
-                ChangeMenu(UI.PAUSE);
+                ChangeUI(UI.PAUSE);
+                GameManager.instance.PauseGame(false);
             }
         }
     }
-    public void ChangeMenu(UI toUI)
+    public void ChangeUI(UI toUI)
     {
         ShowUI(toUI);
         if (currentUI != toUI){
@@ -46,16 +59,18 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
     }
     public void ShowUI(UI toUI)
     {
-        // Debug.Log("show called" + toUI);    
         switch (toUI)
         {
             case UI.GAMEPLAY:
                 break;
             case UI.MAINMENU:
-                
+                mainMenu.Show();
+                break;
+            case UI.LEVELMENU:
+                levelMenu.Show();
                 break;
             case UI.PAUSE:
-                // UIPause.Show();
+                pauseMenu.Show();
                 // GameManager.instance.PauseGame();
                 break;
             case UI.SETTINGS:
@@ -72,16 +87,18 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
     }
     public void HideUI(UI toUI)
     {
-        // Debug.Log("Hide :" + toUI);
         switch (toUI)
         {
             case UI.GAMEPLAY:
                 break;
             case UI.MAINMENU:
-                
+                mainMenu.Hide();
+                break;
+            case UI.LEVELMENU:
+                levelMenu.Hide();
                 break;
             case UI.PAUSE:
-                // UIPause.Show();
+                pauseMenu.Hide();
                 // GameManager.instance.PauseGame();
                 break;
             case UI.SETTINGS:

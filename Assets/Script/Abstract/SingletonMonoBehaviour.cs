@@ -3,17 +3,18 @@ public class SingletonMonoBehaviour<T> : MonoBehaviour where T: SingletonMonoBeh
 {
     public static T instance { get; protected set; }
  
-    void Awake()
+    protected void Awake()
     {
         if (instance != null && instance != this)
         {
-            Destroy(this);
-            throw new System.Exception("An instance of this singleton already exists.");
+            Debug.Log(this.gameObject.name + " Destroyed");
+            Destroy(this.gameObject);
+            // throw new System.Exception("An instance of this singleton already exists.");
         }
         else
         {
+            Debug.Log(this.gameObject.name + "Instanced");
             instance = (T)this;
-            DontDestroyOnLoad(this.gameObject);
         }
     }
 

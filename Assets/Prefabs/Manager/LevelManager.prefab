@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1091399640698672069
+--- !u!1 &2236486940873756832
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,51 +8,47 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5750753301758115028}
-  - component: {fileID: 1892305471368393274}
+  - component: {fileID: 22642070367944377}
+  - component: {fileID: 202895242126574927}
   m_Layer: 0
-  m_Name: UIManager
+  m_Name: CameraManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5750753301758115028
+--- !u!4 &22642070367944377
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1091399640698672069}
+  m_GameObject: {fileID: 2236486940873756832}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1151.3705, y: -653.6757, z: -61.022038}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7923554970197825537}
+  m_Father: {fileID: 1796839698503127236}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1892305471368393274
+--- !u!114 &202895242126574927
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1091399640698672069}
+  m_GameObject: {fileID: 2236486940873756832}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d898a1fb55025f5469816e6cc573d0ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 97451fae0098aeb458febd0ee5d6ffc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentUI: 0
-  mainMenuPrefabs: {fileID: 3744565971303974029, guid: 45a0bd64f5a966e4fa9ce1c0bdc64800, type: 3}
-  levelMenuPrefabs: {fileID: 7654173452969771915, guid: a9f1982aee08bd141b3faf0865290925, type: 3}
-  pauseMenuPrefabs: {fileID: 5720550062570560818, guid: 2b839c921d4758d49890322747170762, type: 3}
-  mainMenu: {fileID: 0}
-  levelMenu: {fileID: 0}
-  pauseMenu: {fileID: 0}
-  parent: {fileID: 5750753301758115028}
---- !u!1 &2137039975236528205
+  mainCamera: {fileID: 0}
+  is2D: 0
+  camera2D: {fileID: 0}
+  camera3D: {fileID: 0}
+--- !u!1 &7272178656848721516
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -60,41 +56,45 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7923554970197825537}
-  - component: {fileID: 7094566098182784882}
+  - component: {fileID: 1796839698503127236}
+  - component: {fileID: 1647847908693685539}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: LevelManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7923554970197825537
+--- !u!4 &1796839698503127236
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2137039975236528205}
+  m_GameObject: {fileID: 7272178656848721516}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1151.3705, y: 653.6757, z: 61.022038}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5750753301758115028}
+  - {fileID: 22642070367944377}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7094566098182784882
+--- !u!114 &1647847908693685539
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2137039975236528205}
+  m_GameObject: {fileID: 7272178656848721516}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ffc28a12ee3eb642bc6de3e6d7f8bb0, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f6ac29dd1699464a89f10711470122f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentScene: 0
+  multiDimentionBases: []
+  player3D: {fileID: 0}
+  player2D: {fileID: 0}
+  mainCamera: {fileID: 0}
+  is2D: 0
