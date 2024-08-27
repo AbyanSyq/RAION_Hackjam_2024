@@ -15,7 +15,7 @@ public class UIPauseMenu : UIBase
 
     void ResumeGame()
     {
-        GameManager.instance.ChangeScene(SceneData.LEVEL01);
+        UIManager.instance.ChangeUI(UI.GAMEPLAY);
     }
 
     void ToMainMenu()

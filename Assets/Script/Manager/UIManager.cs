@@ -41,11 +41,9 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
             Debug.Log("escape");
             if(currentUI == UI.PAUSE) {
                 ChangeUI(UI.GAMEPLAY);
-                GameManager.instance.PauseGame(false);
             }
             else {
                 ChangeUI(UI.PAUSE);
-                GameManager.instance.PauseGame(false);
             }
         }
     }
@@ -54,6 +52,12 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
         ShowUI(toUI);
         if (currentUI != toUI){
             HideUI(currentUI);
+        }
+        if (toUI == UI.PAUSE)
+        {
+            GameManager.instance.PauseGame(true);
+        }else{
+            GameManager.instance.PauseGame(false);
         }
         currentUI = toUI;
     }

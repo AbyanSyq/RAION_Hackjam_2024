@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class Player2D : PlayerBase
 {
     [SerializeField] private bool isGrounded;
     [SerializeField] private bool is2D;
+    [Header("Movement")]
+    [SerializeField] private float movementSpeed = 10f;
 
     [Header("Jump")]
     [SerializeField] private float jumpForce;
@@ -26,13 +29,13 @@ public class Player2D : PlayerBase
 
     private void FixedUpdate()
     {
-        GroundCheck();
         ModifyJump(); // Adjust the fall and jump arc
         Movement();
     }
 
     private void Update()
     {
+        GroundCheck();
         if (Input.GetKeyDown(KeyCode.W) && isGrounded && isActive)
         {
             Jump();
@@ -44,20 +47,31 @@ public class Player2D : PlayerBase
     }
     public override void Activate(bool isActive)
     {
-        rb.isKinematic = !isActive;
+        if (isActive)
+        {  
+            rb.constraints &= ~RigidbodyConstraints.FreezePosition;
+            rb.constraints |= RigidbodyConstraints.FreezeRotation;
+        }else{
+            rb.constraints = RigidbodyConstraints.FreezePositionX;
+            rb.constraints |= RigidbodyConstraints.FreezeRotation;
+        }
         base.Activate(isActive);
     }
 
     public override void Movement()
     {
-        transform.position += direction * Time.fixedDeltaTime * 10;
+        Vector3 normalizedDirection = direction.normalized * movementSpeed;
+        rb.velocity = new Vector3(normalizedDirection.x, rb.velocity.y, rb.velocity.y);
+        base.Movement();
     }
 
     private void Jump()
     {
         Debug.Log("Jump");
-        rb.velocity = new Vector3(rb.velocity.x, 0f); // Reset vertical velocity before applying jump force
-        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        // rb.velocity = new Vector3(rb.velocity.x, 0f); // Reset vertical velocity before applying jump force
+        // rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+
+        rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
         isGrounded = false;
     }
 
