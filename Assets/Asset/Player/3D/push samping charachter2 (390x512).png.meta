@@ -141,7 +141,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 366
+        width: 390
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -160,9 +160,9 @@ TextureImporter:
       name: push samping charachter2 (390x512)_1
       rect:
         serializedVersion: 2
-        x: 366
+        x: 390
         y: 0
-        width: 366
+        width: 390
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -181,9 +181,9 @@ TextureImporter:
       name: push samping charachter2 (390x512)_2
       rect:
         serializedVersion: 2
-        x: 732
+        x: 780
         y: 0
-        width: 366
+        width: 390
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -202,9 +202,9 @@ TextureImporter:
       name: push samping charachter2 (390x512)_3
       rect:
         serializedVersion: 2
-        x: 1098
+        x: 1170
         y: 0
-        width: 366
+        width: 390
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -223,9 +223,9 @@ TextureImporter:
       name: push samping charachter2 (390x512)_4
       rect:
         serializedVersion: 2
-        x: 1464
+        x: 1560
         y: 0
-        width: 366
+        width: 390
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -244,9 +244,9 @@ TextureImporter:
       name: push samping charachter2 (390x512)_5
       rect:
         serializedVersion: 2
-        x: 1830
+        x: 1950
         y: 0
-        width: 366
+        width: 390
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -265,9 +265,9 @@ TextureImporter:
       name: push samping charachter2 (390x512)_6
       rect:
         serializedVersion: 2
-        x: 2196
+        x: 2340
         y: 0
-        width: 366
+        width: 390
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -286,9 +286,9 @@ TextureImporter:
       name: push samping charachter2 (390x512)_7
       rect:
         serializedVersion: 2
-        x: 2562
+        x: 2730
         y: 0
-        width: 366
+        width: 390
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}

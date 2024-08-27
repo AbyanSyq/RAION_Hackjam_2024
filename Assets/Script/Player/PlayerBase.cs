@@ -16,9 +16,12 @@ public abstract class PlayerBase : MonoBehaviour
     [SerializeField] protected Transform NeedToFlip;
     [SerializeField] protected float flipSpeed = 0.5f;
     private Quaternion targetRotation;
+    protected void Update() {
+        animator.SetFloat("Horixontal",direction.x);
+        animator.SetFloat("Vertical",direction.y);
+    }
     public virtual void Movement(){
         Flip();
-        animator.SetFloat("Movement",math.abs(direction.x));
     }
     public virtual void Activate(bool isActive){
         direction = Vector3.zero;

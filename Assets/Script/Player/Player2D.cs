@@ -30,11 +30,15 @@ public class Player2D : PlayerBase
     private void FixedUpdate()
     {
         ModifyJump(); // Adjust the fall and jump arc
-        Movement();
+        if (isActive)
+        {  
+            Movement();
+        }
     }
 
     private void Update()
     {
+        base.Update();
         GroundCheck();
         if (Input.GetKeyDown(KeyCode.W) && isGrounded && isActive)
         {
@@ -47,14 +51,15 @@ public class Player2D : PlayerBase
     }
     public override void Activate(bool isActive)
     {
-        if (isActive)
-        {  
-            rb.constraints &= ~RigidbodyConstraints.FreezePosition;
-            rb.constraints |= RigidbodyConstraints.FreezeRotation;
-        }else{
-            rb.constraints = RigidbodyConstraints.FreezePositionX;
-            rb.constraints |= RigidbodyConstraints.FreezeRotation;
-        }
+        // if (isActive)
+        // {  
+        //     rb.constraints &= ~RigidbodyConstraints.FreezePosition;
+        //     rb.constraints |= RigidbodyConstraints.FreezeRotation;
+        // }else{
+        //     rb.constraints = RigidbodyConstraints.FreezePositionX;
+        //     rb.constraints |= RigidbodyConstraints.FreezeRotation;
+        // }
+        rb.isKinematic = !isActive;
         base.Activate(isActive);
     }
 
@@ -92,6 +97,12 @@ public class Player2D : PlayerBase
     private void GroundCheck()
     {
         isGrounded = Physics.CheckBox(transform.position + groundCheckOffset, groundCheckBoxSize / 2, Quaternion.identity, groundLayerMask);
+        if (!isGrounded && !isActive)
+        {
+            rb.isKinematic = false;
+        }else if(!rb.isKinematic && !isActive){
+            Activate(false);
+        }
     }
 
     private void OnDrawGizmos()

@@ -22,6 +22,7 @@ public class Player3D : PlayerBase
         Movement();
     }
     private void Update() {
+        base.Update();
         GroundCheck();
         if (isActive)
         {
