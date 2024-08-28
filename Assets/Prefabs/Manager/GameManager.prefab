@@ -48,9 +48,11 @@ MonoBehaviour:
   mainMenuPrefabs: {fileID: 3744565971303974029, guid: 45a0bd64f5a966e4fa9ce1c0bdc64800, type: 3}
   levelMenuPrefabs: {fileID: 7654173452969771915, guid: a9f1982aee08bd141b3faf0865290925, type: 3}
   pauseMenuPrefabs: {fileID: 5720550062570560818, guid: 2b839c921d4758d49890322747170762, type: 3}
+  gameoverPrefabs: {fileID: 4912828516107245706, guid: 1bf9c002966ddf64a848e829b804a730, type: 3}
   mainMenu: {fileID: 0}
   levelMenu: {fileID: 0}
   pauseMenu: {fileID: 0}
+  gameover: {fileID: 0}
   parent: {fileID: 5750753301758115028}
 --- !u!1 &2137039975236528205
 GameObject:

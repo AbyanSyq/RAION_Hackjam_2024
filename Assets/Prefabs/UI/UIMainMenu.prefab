@@ -241,8 +241,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ButtonStart: {fileID: 539633179699567185}
-  ButtonLevelMenu: {fileID: 4133765634005241101}
-  ButtonExit: {fileID: 6405203394888596065}
+  ButtonLevelMenu: {fileID: 6405203394888596065}
+  ButtonExit: {fileID: 4133765634005241101}
 --- !u!1 &4461338389233031012
 GameObject:
   m_ObjectHideFlags: 0

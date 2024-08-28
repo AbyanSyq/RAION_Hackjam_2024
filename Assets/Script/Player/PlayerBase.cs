@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Mathematics;
-using UnityEditor.SearchService;
+
 using UnityEngine;
 
 public abstract class PlayerBase : MonoBehaviour

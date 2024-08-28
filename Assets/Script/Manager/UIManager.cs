@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 public enum UI{
     GAMEPLAY,
@@ -8,6 +5,7 @@ public enum UI{
     LEVELMENU,
     PAUSE,
     SETTINGS,
+    VICTORY,
     GAMEOVER,
 }
 public class UIManager : SingletonMonoBehaviour<UIManager>
@@ -20,11 +18,13 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
     [SerializeField] private UIMainMenu mainMenuPrefabs;
     [SerializeField] private UILevelMenu levelMenuPrefabs;
     [SerializeField] private UIPauseMenu pauseMenuPrefabs;
+    [SerializeField] private UIGameOver gameoverPrefabs;
 
     [Header("UI")]
     [SerializeField] private UIMainMenu mainMenu;
     [SerializeField] private UILevelMenu levelMenu;
     [SerializeField] private UIPauseMenu pauseMenu;
+    [SerializeField] private UIGameOver gameover;
 
     [Header("Atribut[Need To Set]")]
     public Transform parent;
@@ -34,6 +34,7 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
         mainMenu = Instantiate(mainMenuPrefabs,parent); mainMenu.Hide();
         levelMenu = Instantiate(levelMenuPrefabs, parent); levelMenu.Hide();
         pauseMenu = Instantiate(pauseMenuPrefabs,parent); pauseMenu.Hide();
+        gameover = Instantiate(gameoverPrefabs,parent); gameover.Hide();
     }
 
     private void Update() {
@@ -53,7 +54,7 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
         if (currentUI != toUI){
             HideUI(currentUI);
         }
-        if (toUI == UI.PAUSE)// || currentUI == UI.GAMEOVER
+        if (toUI == UI.PAUSE)
         {
             GameManager.instance.PauseGame(true);
         }else{
@@ -80,7 +81,11 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
             case UI.SETTINGS:
                 // UISettings.Show();
                 break;
+            case UI.VICTORY:
+                // UIGameover.Show();
+                break;
             case UI.GAMEOVER:
+                gameover.Show();
                 // UIGameover.Show();
                 break;
             default:
@@ -108,7 +113,11 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
             case UI.SETTINGS:
                 // UISettings.Show();
                 break;
+            case UI.VICTORY:
+                // UIGameover.Show();
+                break;
             case UI.GAMEOVER:
+                gameover.Hide();
                 // UIGameover.Show();
                 break;
             default:
