@@ -14,7 +14,7 @@ public class PressurePlate : MonoBehaviour, ITransmitter
         }
     }   
     private void OnTriggerEnter(Collider other) {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player")|| other.CompareTag("Obstacle"))
         {
             Debug.Log("press");
             spriteRenderer.sprite = onPressSprite;
@@ -22,7 +22,7 @@ public class PressurePlate : MonoBehaviour, ITransmitter
         }
     }
     private void OnTriggerExit(Collider other) {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") || other.CompareTag("Obstacle"))
         {
             Debug.Log("release");
             spriteRenderer.sprite = defaultSprite;

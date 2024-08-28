@@ -21,7 +21,7 @@ public class LayerMultiDimentionalSet : MultiDimentionBase
 
     void Start()
     {
-        base.Start();
+        // base.Start();
 
         // Simpan nilai default dari transform saat start
         positionDefault = transform.localPosition;

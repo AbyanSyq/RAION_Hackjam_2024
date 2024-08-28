@@ -12,10 +12,19 @@ public class MoveObject : MultiDimentionBase, IReceiver
     public float moveSpeed = 2.0f; // Speed of movement
     [SerializeField] private Vector3 targetPosition; // Initial position when the scene starts
     [SerializeField] private Vector3 originalPosition; // Original position to return to
+    [Header("GroundCheck")]
+    [SerializeField] private LayerMask groundLayerMask;
+    [SerializeField] private Vector3 groundCheckOffset;
+    [SerializeField] private Vector3 groundCheckBoxSize;
+    [Header("Follow")]
+    [SerializeField] private bool following;
+    private void Awake() {
+        
+    }
 
     void Start()
     {
-        base.Start();
+        base.Start(); 
         originalPosition =  transform.position;// Set original position as initial position
         targetPosition = originalPosition + moveTo;
     }
@@ -25,12 +34,12 @@ public class MoveObject : MultiDimentionBase, IReceiver
         
         if (isMoving)
         {
-            transform.position = Vector3.Slerp(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, targetPosition, moveSpeed * Time.deltaTime);
         }
         else
         {
             // Move back to the original position
-            transform.position = Vector3.Slerp(transform.position, originalPosition, moveSpeed * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, originalPosition, moveSpeed * Time.deltaTime);
         }
     }
 

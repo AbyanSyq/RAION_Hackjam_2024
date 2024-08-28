@@ -11,6 +11,7 @@ public class Player2D : PlayerBase
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Color targetColor;
     [SerializeField] private float duration;
+    [SerializeField] private float velocityUp;
     [Header("Movement")]
     [SerializeField] private float movementSpeed = 10f;
 
@@ -25,6 +26,7 @@ public class Player2D : PlayerBase
     [SerializeField] private LayerMask groundLayerMask;
     [SerializeField] private Vector3 groundCheckOffset;
     [SerializeField] private Vector3 groundCheckBoxSize;
+    public Collider[] colliders;
     [Header("Follow")]
     [SerializeField] private bool following;
 
@@ -58,6 +60,8 @@ public class Player2D : PlayerBase
     }
     public void SetAnimation(){
         animator.SetFloat("Horizontal",math.abs(direction.x));
+        animator.SetFloat("VerticalVelocity",rb.velocity.y);
+        animator.SetBool("isGrounded",isGrounded);
     }
     public override void Activate(bool isActive)
     {
@@ -119,7 +123,7 @@ public class Player2D : PlayerBase
 
     private void GroundCheck()
     {
-        Collider[] colliders = Physics.OverlapBox(transform.position + groundCheckOffset, groundCheckBoxSize / 2, Quaternion.identity, groundLayerMask);
+        colliders = Physics.OverlapBox(transform.position + groundCheckOffset, groundCheckBoxSize / 2, Quaternion.identity, groundLayerMask);
         isGrounded = colliders.Length > 0;
 
         Transform tempTransform = null;

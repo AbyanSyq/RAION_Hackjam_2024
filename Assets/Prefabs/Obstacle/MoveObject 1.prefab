@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 572942910312801358}
   - component: {fileID: 4227545938751267108}
   - component: {fileID: 7315562836336010953}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoveObject 1
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91,7 +91,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6020857643736961274}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 10dfb9e08aac7d44390e24421d231220, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

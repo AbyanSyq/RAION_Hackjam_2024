@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5172036715268301138}
   - component: {fileID: 3848265446408236700}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: obctacle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7996252172846965355}
   - component: {fileID: 3507737345582769207}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: obctacle3 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3773958119393428328}
   - component: {fileID: 5337591505786869840}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: obctacle3 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 388952879462907627}
   - component: {fileID: 3727852586719618583}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: obctacle3 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -346,9 +346,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5409013541682266832}
   - component: {fileID: 3079857885140609486}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Box_1x6
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -379,7 +379,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4675694453218823914}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 10dfb9e08aac7d44390e24421d231220, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8320008264125250661}
   - component: {fileID: 3635691399804180762}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: obctacle1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 215670745388614034}
   - component: {fileID: 7969961465455596720}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: obctacle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3476718583000870709}
   - component: {fileID: 6637993138463289196}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: obctacle1 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,9 +262,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7028088003241467322}
   - component: {fileID: 8913671289149648963}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: box_1.3
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -319,7 +319,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5145833078600542101}
   - component: {fileID: 5934865068300847171}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: obctacle1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

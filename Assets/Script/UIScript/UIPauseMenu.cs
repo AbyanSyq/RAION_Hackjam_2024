@@ -3,12 +3,14 @@ using UnityEngine.UI;
 
 public class UIPauseMenu : UIBase
 {
-    [SerializeField] Button ButtonPause;
+    [SerializeField] Button ButtonResume;
+    [SerializeField] Button ButtonRestart;
     [SerializeField] Button ButtonMainMenu;
     [SerializeField] Button ButtonExit;
     private void Awake()
     {
-        ButtonPause.onClick.AddListener(ResumeGame);
+        ButtonResume.onClick.AddListener(ResumeGame);
+        ButtonRestart.onClick.AddListener(Restart);
         ButtonMainMenu.onClick.AddListener(ToMainMenu);
         ButtonExit.onClick.AddListener(ExitGame);
     }
@@ -16,6 +18,9 @@ public class UIPauseMenu : UIBase
     void ResumeGame()
     {
         UIManager.instance.ChangeUI(UI.GAMEPLAY);
+    }
+    void Restart(){
+        GameManager.instance.ReLoadScene();
     }
 
     void ToMainMenu()

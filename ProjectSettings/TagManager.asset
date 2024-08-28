@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Obstacle
   - MoveObject
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -14,7 +15,7 @@ TagManager:
   - Water
   - UI
   - Obstacle
-  - 
+  - Ground
   - 
   - 
   - 

@@ -53,7 +53,7 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
         if (currentUI != toUI){
             HideUI(currentUI);
         }
-        if (toUI == UI.PAUSE)
+        if (toUI == UI.PAUSE)// || currentUI == UI.GAMEOVER
         {
             GameManager.instance.PauseGame(true);
         }else{

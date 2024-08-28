@@ -4,7 +4,7 @@ public class BGMultiDimentionalSet : MultiDimentionBase
 {
     void Start()
     {
-        base.Start();
+        // base.Start();
     }
 
     public override void To2D()

@@ -36,6 +36,9 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         SceneManager.LoadScene((int)sceneIndex);
         currentScene = sceneIndex;
     }
+    public void ReLoadScene(){
+        SceneManager.LoadScene((int)currentScene);
+    }
     public void PauseGame(bool pause = true){
         Time.timeScale = (pause) ? 0 : 1;
     }

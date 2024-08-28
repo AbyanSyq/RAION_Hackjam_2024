@@ -494,7 +494,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -1146659126, guid: c44593ab8b82e474aa390459e92ca857, type: 3}
-  m_Color: {r: 0.73333335, g: 0.82745105, b: 0.9058824, a: 0.34901962}
+  m_Color: {r: 0.73333335, g: 0.82745105, b: 0.9058824, a: 0.3529412}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1443,7 +1443,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1286817328704813041
 Transform:
   m_ObjectHideFlags: 0
@@ -1552,7 +1552,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -1146659126, guid: c44593ab8b82e474aa390459e92ca857, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5372549}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1726,8 +1726,12 @@ MonoBehaviour:
   isGrounded: 0
   is2D: 0
   aura: {fileID: 7143779345043205988}
+  spriteRenderer: {fileID: 4409437703098785747}
+  targetColor: {r: 0.73333335, g: 0.827451, b: 0.90588236, a: 0.3529412}
+  duration: 0.5
+  velocityUp: 0
   movementSpeed: 10
-  jumpForce: 10
+  jumpForce: 9
   fallMultiplier: 2.5
   lowJumpMultiplier: 2
   rb: {fileID: 0}
@@ -1771,7 +1775,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8771800033409086383}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 10dfb9e08aac7d44390e24421d231220, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

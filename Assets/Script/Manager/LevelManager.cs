@@ -14,7 +14,8 @@ public class LevelManager : SingletonMonoBehaviour<LevelManager>
     public Camera mainCamera;
     
     public bool is2D;
-    // Start is called before the first frame update
+    private bool isTransitioning = false;
+
     private void Start() {
         mainCamera = FindAnyObjectByType<Camera>();
         player2D = FindAnyObjectByType<Player2D>();
@@ -23,14 +24,14 @@ public class LevelManager : SingletonMonoBehaviour<LevelManager>
         StartCoroutine(To2D());
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !isTransitioning)
         {   
             changeState();
         }
     }
+
     public void changeState(){
         if (is2D)
         {
@@ -39,24 +40,40 @@ public class LevelManager : SingletonMonoBehaviour<LevelManager>
             StartCoroutine(To2D());
         }
     }
+
     public IEnumerator To2D(){
+        isTransitioning = true;
+
         player3D.Activate(false);
+        yield return null;
+
         foreach (MultiDimentionBase multiDimention in multiDimentionBases)
         {
             multiDimention.To2D();
         }
         yield return null;
+
         player2D.Activate(true);
         is2D = true;
+
+        isTransitioning = false;
     }
+
     public IEnumerator To3D(){
+        isTransitioning = true;
+
         player2D.Activate(false);
+        yield return null;
+
         foreach (MultiDimentionBase multiDimention in multiDimentionBases)
         {
             multiDimention.To3D();
         }
         yield return null;
+
         player3D.Activate(true);
         is2D = false;
+
+        isTransitioning = false;
     }
 }
