@@ -1,12 +1,16 @@
 using System.Collections;
-using System.Collections.Generic;
-using JetBrains.Annotations;
+using Unity.Mathematics;
 using UnityEngine;
+using DG.Tweening;
 
 public class Player2D : PlayerBase
 {
     [SerializeField] private bool isGrounded;
     [SerializeField] private bool is2D;
+    [SerializeField] private GameObject aura;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private Color targetColor;
+    [SerializeField] private float duration;
     [Header("Movement")]
     [SerializeField] private float movementSpeed = 10f;
 
@@ -21,6 +25,8 @@ public class Player2D : PlayerBase
     [SerializeField] private LayerMask groundLayerMask;
     [SerializeField] private Vector3 groundCheckOffset;
     [SerializeField] private Vector3 groundCheckBoxSize;
+    [Header("Follow")]
+    [SerializeField] private bool following;
 
     private void Awake()
     {
@@ -39,6 +45,7 @@ public class Player2D : PlayerBase
     private void Update()
     {
         base.Update();
+        SetAnimation();
         GroundCheck();
         if (Input.GetKeyDown(KeyCode.W) && isGrounded && isActive)
         {
@@ -48,6 +55,9 @@ public class Player2D : PlayerBase
         {
             direction.x = Input.GetAxisRaw("Horizontal");
         }
+    }
+    public void SetAnimation(){
+        animator.SetFloat("Horizontal",math.abs(direction.x));
     }
     public override void Activate(bool isActive)
     {
@@ -60,7 +70,20 @@ public class Player2D : PlayerBase
         //     rb.constraints |= RigidbodyConstraints.FreezeRotation;
         // }
         rb.isKinematic = !isActive;
+        if (isActive)
+        {
+            spriteRenderer.DOColor(Color.white,duration);
+
+            StartCoroutine(SetAura(false,0.5f));
+        }else {
+            spriteRenderer.DOColor(targetColor,duration);
+            StartCoroutine(SetAura(true,0f));
+        }
         base.Activate(isActive);
+    }
+    public IEnumerator SetAura(bool isActive, float delay){
+        yield return new WaitForSeconds(delay);
+        aura.SetActive(isActive);
     }
 
     public override void Movement()
@@ -96,8 +119,28 @@ public class Player2D : PlayerBase
 
     private void GroundCheck()
     {
-        isGrounded = Physics.CheckBox(transform.position + groundCheckOffset, groundCheckBoxSize / 2, Quaternion.identity, groundLayerMask);
-        if (!isGrounded && !isActive)
+        Collider[] colliders = Physics.OverlapBox(transform.position + groundCheckOffset, groundCheckBoxSize / 2, Quaternion.identity, groundLayerMask);
+        isGrounded = colliders.Length > 0;
+
+        Transform tempTransform = null;
+        foreach (Collider collider in colliders)
+        {
+            if (!isActive && collider.CompareTag("MoveObject"))
+            {
+                if (tempTransform == null)
+                {
+                    tempTransform = collider.transform;
+                    break;
+                }
+            }
+        }
+        if (tempTransform != null)
+        {
+            following = true;
+        }else{
+            following = false;
+        }
+        if (!isGrounded && !isActive || (following && isGrounded && !isActive) )
         {
             rb.isKinematic = false;
         }else if(!rb.isKinematic && !isActive){

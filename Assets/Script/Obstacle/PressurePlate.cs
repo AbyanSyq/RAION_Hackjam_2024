@@ -1,9 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PressurePlate : MonoBehaviour, ITransmitter
 {
+    [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] Sprite onPressSprite;
+    [SerializeField] Sprite defaultSprite;
     public GameObject[] receivers;
     public void Transmit(bool press = true)
     {
@@ -13,11 +14,19 @@ public class PressurePlate : MonoBehaviour, ITransmitter
         }
     }   
     private void OnTriggerEnter(Collider other) {
-        Debug.Log("press");
-        Transmit();
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("press");
+            spriteRenderer.sprite = onPressSprite;
+            Transmit();
+        }
     }
     private void OnTriggerExit(Collider other) {
-        Debug.Log("release");
-        Transmit(false);
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("release");
+            spriteRenderer.sprite = defaultSprite;
+            Transmit(false);
+        }
     }
 }

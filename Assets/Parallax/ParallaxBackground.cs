@@ -1,21 +1,47 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 [ExecuteInEditMode]
-public class ParallaxBackground : MonoBehaviour
+public class ParallaxBackground : MultiDimentionBase
 {
-    public ParallaxCamera parallaxCamera;
+    public ParallaxCamera[] parallaxCameras = new ParallaxCamera[2];
+    [SerializeField] private ParallaxCamera parallaxCamera;
     List<ParallaxLayer> parallaxLayers = new List<ParallaxLayer>();
 
     void Start()
     {
-        if (parallaxCamera == null)
-            parallaxCamera = Camera.main.GetComponent<ParallaxCamera>();
-
-        if (parallaxCamera != null)
-            parallaxCamera.onCameraTranslate += Move;
+        base.Start();
+        SwitchCamera(parallaxCameras[0]);
 
         SetLayers();
+    }
+
+    public override void To2D()
+    {
+        base.To2D();
+        SwitchCamera(parallaxCameras[0]);
+    }
+
+    public override void To3D()
+    {
+        base.To3D();
+        SwitchCamera(parallaxCameras[1]);
+    }
+
+    void SwitchCamera(ParallaxCamera newCamera)
+    {
+        if (parallaxCamera != null)
+        {
+            parallaxCamera.onCameraTranslate -= Move;
+        }
+
+        parallaxCamera = newCamera;
+
+        if (parallaxCamera != null)
+        {
+            parallaxCamera.onCameraTranslate += Move;
+        }
     }
 
     void SetLayers()
