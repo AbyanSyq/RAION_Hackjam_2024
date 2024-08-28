@@ -7993,10 +7993,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4148245130085850273, guid: 9fb507bbaad7bed40bc0d395e26e5691, type: 3}
-      propertyPath: groundLayerMask.m_Bits
-      value: 192
-      objectReference: {fileID: 0}
     - target: {fileID: 4862905508685884009, guid: 9fb507bbaad7bed40bc0d395e26e5691, type: 3}
       propertyPath: m_LocalPosition.x
       value: 45
@@ -8040,10 +8036,6 @@ PrefabInstance:
     - target: {fileID: 8771800033409086383, guid: 9fb507bbaad7bed40bc0d395e26e5691, type: 3}
       propertyPath: m_Name
       value: Player2D
-      objectReference: {fileID: 0}
-    - target: {fileID: 8771800033409086383, guid: 9fb507bbaad7bed40bc0d395e26e5691, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

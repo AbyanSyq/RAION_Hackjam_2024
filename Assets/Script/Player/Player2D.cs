@@ -61,7 +61,7 @@ public class Player2D : PlayerBase
     public void SetAnimation(){
         animator.SetFloat("Horizontal",math.abs(direction.x));
         animator.SetFloat("VerticalVelocity",rb.velocity.y);
-        animator.SetBool("isGrounded",isGrounded);
+        animator.SetBool("IsGrounded",isGrounded);
     }
     public override void Activate(bool isActive)
     {
