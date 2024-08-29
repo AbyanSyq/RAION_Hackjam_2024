@@ -36,6 +36,14 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         SceneManager.LoadScene((int)sceneIndex);
         currentScene = sceneIndex;
     }
+    public void ChangeScene(int sceneIndex){
+        if (sceneIndex >= SceneManager.sceneCountInBuildSettings)
+        {
+            sceneIndex = (int)SceneData.MAINMENU;
+        }
+        SceneManager.LoadScene(sceneIndex);
+        currentScene = (SceneData)sceneIndex;
+    }
     public void ReLoadScene(){
         SceneManager.LoadScene((int)currentScene);
     }

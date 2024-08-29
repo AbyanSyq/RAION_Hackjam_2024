@@ -19,12 +19,16 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
     [SerializeField] private UILevelMenu levelMenuPrefabs;
     [SerializeField] private UIPauseMenu pauseMenuPrefabs;
     [SerializeField] private UIGameOver gameoverPrefabs;
+    [SerializeField] private UIComplete completePrefabs;
+    [SerializeField] private UIGamePlay gamePlayPrefabs;    
 
     [Header("UI")]
     [SerializeField] private UIMainMenu mainMenu;
     [SerializeField] private UILevelMenu levelMenu;
     [SerializeField] private UIPauseMenu pauseMenu;
     [SerializeField] private UIGameOver gameover;
+    [SerializeField] private UIComplete complete;
+    [SerializeField] private UIGamePlay gamePlay;    
 
     [Header("Atribut[Need To Set]")]
     public Transform parent;
@@ -35,6 +39,8 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
         levelMenu = Instantiate(levelMenuPrefabs, parent); levelMenu.Hide();
         pauseMenu = Instantiate(pauseMenuPrefabs,parent); pauseMenu.Hide();
         gameover = Instantiate(gameoverPrefabs,parent); gameover.Hide();
+        complete = Instantiate(completePrefabs,parent); complete.Hide();
+        gamePlay = Instantiate(gamePlayPrefabs,parent); gamePlay.Hide();
     }
 
     private void Update() {
@@ -67,6 +73,7 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
         switch (toUI)
         {
             case UI.GAMEPLAY:
+                gamePlay.Show();
                 break;
             case UI.MAINMENU:
                 mainMenu.Show();
@@ -82,6 +89,7 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
                 // UISettings.Show();
                 break;
             case UI.VICTORY:
+                complete.Show();
                 // UIGameover.Show();
                 break;
             case UI.GAMEOVER:
@@ -99,6 +107,7 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
         switch (toUI)
         {
             case UI.GAMEPLAY:
+                gamePlay.Hide();
                 break;
             case UI.MAINMENU:
                 mainMenu.Hide();
@@ -114,7 +123,7 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
                 // UISettings.Show();
                 break;
             case UI.VICTORY:
-                // UIGameover.Show();
+                complete.Hide();
                 break;
             case UI.GAMEOVER:
                 gameover.Hide();
@@ -125,5 +134,7 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
                 break;
         }
     }
-    
+    public UIGamePlay GetUIGamePlay(){
+        return gamePlay;
+    }
 }

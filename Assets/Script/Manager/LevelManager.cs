@@ -8,15 +8,20 @@ public class LevelManager : SingletonMonoBehaviour<LevelManager>
     public void AddMultiDimentionObject(MultiDimentionBase multiDimentionBase){
         multiDimentionBases.Add(multiDimentionBase);
     }
-
+    [Header("Reference")]
     public Player3D player3D;
     public Player2D player2D; 
     public Camera mainCamera;
-    
+    public SceneData sceneData;
+    public float delayChange = 0.8f;
+    [Header("Condition")]
     public bool is2D;
-    private bool isTransitioning = false;
+    public bool isTransitioning = false;
 
     private void Start() {
+        UIManager.instance.GetUIGamePlay().StopStopwatch();
+        UIManager.instance.GetUIGamePlay().ResetStopwatch();
+
         mainCamera = FindAnyObjectByType<Camera>();
         player2D = FindAnyObjectByType<Player2D>();
         player3D = FindAnyObjectByType<Player3D>();
@@ -33,6 +38,8 @@ public class LevelManager : SingletonMonoBehaviour<LevelManager>
     }
 
     public void changeState(){
+        isTransitioning = true;
+        Invoke("DelayChange", delayChange);
         if (is2D)
         {
             StartCoroutine(To3D());
@@ -42,8 +49,6 @@ public class LevelManager : SingletonMonoBehaviour<LevelManager>
     }
 
     public IEnumerator To2D(){
-        isTransitioning = true;
-
         player3D.Activate(false);
         yield return null;
 
@@ -55,13 +60,12 @@ public class LevelManager : SingletonMonoBehaviour<LevelManager>
 
         player2D.Activate(true);
         is2D = true;
-
+    }
+    public void DelayChange(){
         isTransitioning = false;
     }
 
     public IEnumerator To3D(){
-        isTransitioning = true;
-
         player2D.Activate(false);
         yield return null;
 
@@ -73,7 +77,5 @@ public class LevelManager : SingletonMonoBehaviour<LevelManager>
 
         player3D.Activate(true);
         is2D = false;
-
-        isTransitioning = false;
     }
 }

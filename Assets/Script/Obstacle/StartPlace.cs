@@ -19,6 +19,6 @@ public class StartPlace : MonoBehaviour
     private void StartGame()
     {
         Debug.Log("Game Start");
-        //call ui gamplay to start the timer
+        UIManager.instance.GetUIGamePlay().StartStopwatch();
     }
 }

@@ -222,7 +222,6 @@ GameObject:
   - component: {fileID: 7331909286250512070}
   - component: {fileID: 8779572999366260944}
   - component: {fileID: 1627927226800897130}
-  - component: {fileID: 5389291638522195200}
   - component: {fileID: 2584447281619771681}
   m_Layer: 5
   m_Name: UIComplete
@@ -327,7 +326,7 @@ Animator:
   m_GameObject: {fileID: 8972768861855259147}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 903cc598ac780db47a011e36e77ace9a, type: 2}
+  m_Controller: {fileID: 9100000, guid: dc9b61bdba6e97c4587a4f114c0ff6b2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -338,20 +337,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5389291638522195200
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8972768861855259147}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85fa234045ef0c74f93b625eb77bd2c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ButtonRestart: {fileID: 4763181764999461772}
-  ButtonMainMenu: {fileID: 8078558781428160312}
 --- !u!114 &2584447281619771681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -364,6 +349,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6d9f66f268dfe34ab852e92a529f526, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ButtonNext: {fileID: 4763181764999461772}
+  ButtonMainMenu: {fileID: 8078558781428160312}
 --- !u!1001 &246789760743456583
 PrefabInstance:
   m_ObjectHideFlags: 0
