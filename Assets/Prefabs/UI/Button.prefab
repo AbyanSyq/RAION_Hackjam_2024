@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 5374848451623560093}
   - component: {fileID: 8857225700336739229}
   - component: {fileID: 8318161234376681599}
+  - component: {fileID: 7463357882159116507}
+  - component: {fileID: 6261289560089252607}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -120,7 +122,47 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8857225700336739229}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6261289560089252607}
+        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
+        m_MethodName: ChangeSprite
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7463357882159116507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5840489985340620669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
+--- !u!114 &6261289560089252607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5840489985340620669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f246b503d0a1b4c43b2e3959f11b1b20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverScale: {x: 1.2, y: 1.2, z: 1.2}
+  targetImage: {fileID: 8857225700336739229}
+  newSprite: {fileID: 21300000, guid: 73e58c496103e914ea1f2265009b08e0, type: 3}
 --- !u!1 &6609630401726277024
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,7 +228,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: START
+  m_text: MENU
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e7c6c861f8c67aa45ac6736519b513ce, type: 2}
   m_sharedMaterial: {fileID: -7876152081590499712, guid: e7c6c861f8c67aa45ac6736519b513ce, type: 2}
