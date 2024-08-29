@@ -5,6 +5,7 @@ public enum SceneData{//NANTI SEUAIIN SAMA DI BUILD
     MAINMENU,
     LEVEL01,
     LEVEL02,
+    Level03,
 }
 public class GameManager : SingletonMonoBehaviour<GameManager>
 {
@@ -15,11 +16,15 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         DontDestroyOnLoad(this.gameObject);
         SceneManager.sceneLoaded += OnSceneLoad;
     }
+    private void Start() {
+        MusicManager.Instance.PlayMusic("BGM");
+    }
     void OnSceneLoad(Scene scene, LoadSceneMode mode){
         switch (scene.buildIndex)
         {
             case 0:
                 UIManager.instance.ChangeUI(UI.MAINMENU);
+                MusicManager.Instance.PlayMusic("BGM");
                 break;
             default:
                 UIManager.instance.ChangeUI(UI.GAMEPLAY);

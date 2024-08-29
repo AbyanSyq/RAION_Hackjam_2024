@@ -16,7 +16,7 @@ public class UIComplete : UIBase
     }
 
     void NextScene(){
-        GameManager.instance.ChangeScene(GameManager.instance.currentScene + 1);
+        GameManager.instance.ChangeScene((int)GameManager.instance.currentScene + 1);
     }
 
     void ToMainMenu()

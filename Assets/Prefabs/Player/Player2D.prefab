@@ -1488,6 +1488,7 @@ GameObject:
   - component: {fileID: 4376427784547253257}
   - component: {fileID: 4409437703098785747}
   - component: {fileID: 5585808266484304971}
+  - component: {fileID: 7014255282890057954}
   m_Layer: 0
   m_Name: PlayerVisual
   m_TagString: Untagged
@@ -1583,6 +1584,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7014255282890057954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8175971673439374985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 871610a681cf56649b646bb0c458e3c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8565465721162716777
 GameObject:
   m_ObjectHideFlags: 0
@@ -1730,7 +1743,7 @@ MonoBehaviour:
   targetColor: {r: 0.73333335, g: 0.827451, b: 0.90588236, a: 0.3529412}
   duration: 0.5
   velocityUp: 0
-  movementSpeed: 10
+  movementSpeed: 5
   jumpForce: 9
   fallMultiplier: 2.5
   lowJumpMultiplier: 2
@@ -1788,7 +1801,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1.5, z: 8}
+  m_Size: {x: 1, y: 1.2, z: 8}
   m_Center: {x: 0, y: 1.25, z: 4}
 --- !u!136 &8399189418372979408
 CapsuleCollider:

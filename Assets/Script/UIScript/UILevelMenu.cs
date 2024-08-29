@@ -10,7 +10,7 @@ public class UILevelMenu : UIBase
     private void Awake()
     {
         backToMainMenu.onClick.AddListener(BackToMainMenu);;
-        for (int i = 0; i < System.Enum.GetValues(typeof(SceneData)).Length - 1; i++)
+        for (int i = 0; i < levelList.Count - 1; i++)
         {
             int levelIndex = i + 1;
             levelList[i].onClick.AddListener(() => ToLevelScene(levelIndex));
@@ -19,8 +19,8 @@ public class UILevelMenu : UIBase
 
     void ToLevelScene(int n)
     {
-        GameManager.instance.ChangeScene((SceneData)n);
         Debug.Log("Scene level menu"); 
+        GameManager.instance.ChangeScene((SceneData)n);
     }
 
 

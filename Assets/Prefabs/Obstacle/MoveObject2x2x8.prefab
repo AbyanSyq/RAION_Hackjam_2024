@@ -495,7 +495,7 @@ GameObject:
   - component: {fileID: -7249631888524845692}
   m_Layer: 6
   m_Name: MoveObject2x2x8
-  m_TagString: Obstacle
+  m_TagString: MoveObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
