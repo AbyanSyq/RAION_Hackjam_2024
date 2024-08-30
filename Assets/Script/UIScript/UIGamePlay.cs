@@ -31,6 +31,16 @@ public class UIGamePlay : UIBase
         timerText.text = string.Format("{0:00}:{1:00}:{2:00}", minutes, seconds, milliseconds);
         this.isTimer = true;
     }
+    public void SetOffTimer() {
+        timer = 0;
+        int minutes = Mathf.FloorToInt(timer / 60f);
+        int seconds = Mathf.FloorToInt(timer % 60f);
+        int milliseconds = Mathf.FloorToInt((timer * 100f) % 100f);
+
+        timerText.text = string.Format("{0:00}:{1:00}:{2:00}", minutes, seconds, milliseconds);
+        this.isTimer = false;
+        timerText.gameObject.SetActive(false);
+    }
 
     void Update()
     {

@@ -43,6 +43,8 @@ public class LevelManager : SingletonMonoBehaviour<LevelManager>
         {
             Debug.Log("set timer");
             UIManager.instance.GetUIGamePlay().SetTimer();
+        }else{
+            UIManager.instance.GetUIGamePlay().SetOffTimer();
         }
     }
 
