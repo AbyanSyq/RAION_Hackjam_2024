@@ -49,7 +49,7 @@ public class Player2D : PlayerBase
         base.Update();
         SetAnimation();
         GroundCheck();
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded && isActive)
+        if (Input.GetButtonDown("Jump") && isGrounded && isActive)
         {
             Jump();
         }

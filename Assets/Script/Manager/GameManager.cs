@@ -11,7 +11,7 @@ public enum SceneData{//NANTI SEUAIIN SAMA DI BUILD
     MAINMENU,
     LEVEL01,
     LEVEL02,
-    Level03,
+    LEVEL03,
 }
 public class GameManager : SingletonMonoBehaviour<GameManager>
 {
@@ -31,11 +31,11 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     }
 
     void OnSceneLoad(Scene scene, LoadSceneMode mode){
+        MusicManager.Instance.PlayMusic("BGM");
         switch (scene.buildIndex)
         {
             case 0:
                 UIManager.instance.ChangeUI(UI.MAINMENU);
-                MusicManager.Instance.PlayMusic("BGM");
                 break;
             default:
                 UIManager.instance.ChangeUI(UI.GAMEPLAY);
@@ -44,8 +44,8 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     }
     public void ChangeScene(SceneData sceneIndex){
         SceneManager.LoadScene((int)sceneIndex);
-        levelIndex = (int)sceneIndex -1;
         currentScene = sceneIndex;
+        levelIndex = (int)sceneIndex-1;
     }
     public void ChangeScene(int sceneIndex){
         if (sceneIndex >= SceneManager.sceneCountInBuildSettings)
@@ -54,6 +54,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         }
         SceneManager.LoadScene(sceneIndex);
         currentScene = (SceneData)sceneIndex;
+        levelIndex = (int)sceneIndex-1;
     }
     public void ReLoadScene(){
         SceneManager.LoadScene((int)currentScene);
@@ -91,5 +92,16 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     }
     public void LoadCoins(){
         coin = SaveLoadSystem.LoadCoins();
+    }
+
+    public int GetLastLevel(){
+        foreach (LevelData levelData in levelData)
+        {
+            if (!levelData.isComplete)
+            {
+                return levelData.levelIndex + 1;
+            }
+        }
+        return 1;
     }
 }

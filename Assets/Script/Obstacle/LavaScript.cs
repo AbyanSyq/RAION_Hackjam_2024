@@ -4,14 +4,25 @@ using UnityEngine;
 
 public class LavaScript : MonoBehaviour
 {
+    public bool isEffectTo2D = false;
     private void OnTriggerEnter(Collider other) {
         
     }
     private void OnCollisionEnter(Collision other) {
-        if (other.gameObject.CompareTag("Player") && !LevelManager.instance.is2D)
+        if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Gameoverrrrrrrrr");
-            UIManager.instance.ChangeUI(UI.GAMEOVER);
+            if (LevelManager.instance.is2D)
+            {
+                if (isEffectTo2D)
+                {
+                    Debug.Log("Gameoverrrrrrrrr");
+                    UIManager.instance.ChangeUI(UI.GAMEOVER); 
+                }
+            }else{
+                Debug.Log("Gameoverrrrrrrrr");
+                UIManager.instance.ChangeUI(UI.GAMEOVER); 
+            }
+            
         }
     }
 }

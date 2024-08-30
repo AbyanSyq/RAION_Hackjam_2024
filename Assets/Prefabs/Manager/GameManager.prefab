@@ -44,7 +44,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -206,7 +206,7 @@ MonoBehaviour:
   tracks:
   - trackName: BGM
     clip: {fileID: 8300000, guid: 91fa89f056943254b918b0ea55c1e03f, type: 3}
-  - trackName: BGM Last Stage
+  - trackName: BGMLastStage
     clip: {fileID: 8300000, guid: 24374c16ceb9e6741b40f9ce4648c690, type: 3}
 --- !u!114 &6632931238314520687
 MonoBehaviour:

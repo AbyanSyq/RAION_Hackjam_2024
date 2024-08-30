@@ -39,6 +39,11 @@ public class LevelManager : SingletonMonoBehaviour<LevelManager>
         {
             StartCoroutine(cameraManager.PlayCutScene(cutSceneDuration));
         }
+        if (isTimer)
+        {
+            Debug.Log("set timer");
+            UIManager.instance.GetUIGamePlay().SetTimer();
+        }
     }
 
     void Update()

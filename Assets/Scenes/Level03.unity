@@ -8129,7 +8129,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1647847908693685539, guid: 800c7aca0ba075547ba24bcec0e5b110, type: 3}
       propertyPath: timerAmount
-      value: 3
+      value: 360
       objectReference: {fileID: 0}
     - target: {fileID: 1647847908693685539, guid: 800c7aca0ba075547ba24bcec0e5b110, type: 3}
       propertyPath: isHaveCutScene
@@ -9474,7 +9474,7 @@ PrefabInstance:
       objectReference: {fileID: 1282266229}
     - target: {fileID: 9077886108049430605, guid: 8ca52acba4eb62a44a333780baac22d8, type: 3}
       propertyPath: m_VersionIndex
-      value: 4395
+      value: 4398
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25170,6 +25170,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1803078665}
+    - target: {fileID: 9077886108049430605, guid: 8ca52acba4eb62a44a333780baac22d8, type: 3}
+      propertyPath: m_VersionIndex
+      value: 4395
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26845,6 +26849,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 407aca36a4333a04cabd2af4abe28de6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isEffectTo2D: 1
 --- !u!4 &6000364850311172454
 Transform:
   m_ObjectHideFlags: 0
@@ -27094,6 +27099,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 407aca36a4333a04cabd2af4abe28de6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isEffectTo2D: 0
 --- !u!114 &7682739648032759047
 MonoBehaviour:
   m_ObjectHideFlags: 0

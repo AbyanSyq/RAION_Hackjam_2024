@@ -68,6 +68,7 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
         }
         if (toUI == UI.VICTORY)
         {
+            GameManager.instance.SaveLevel();
             complete.SetCurrentRecord(gamePlay.StopStopwatch());
         }
         currentUI = toUI;

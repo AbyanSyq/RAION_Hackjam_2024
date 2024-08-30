@@ -22,7 +22,8 @@ public class UIMainMenu : UIBase
             Debug.Log("Lako null cok");
             return;
         }
-        GameManager.instance.ChangeScene(SceneData.LEVEL01);
+        Debug.Log(GameManager.instance.GetLastLevel());
+        GameManager.instance.ChangeScene(GameManager.instance.GetLastLevel());
     }
 
     void ToLevelMenu()

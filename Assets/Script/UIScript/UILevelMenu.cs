@@ -10,9 +10,10 @@ public class UILevelMenu : UIBase
     private void Awake()
     {
         backToMainMenu.onClick.AddListener(BackToMainMenu);;
-        for (int i = 0; i < levelList.Count - 1; i++)
+        for (int i = 0; i < levelList.Count; i++)
         {
             int levelIndex = i + 1;
+            Debug.Log((SceneData)levelIndex);
             levelList[i].onClick.AddListener(() => ToLevelScene(levelIndex));
         }
     }

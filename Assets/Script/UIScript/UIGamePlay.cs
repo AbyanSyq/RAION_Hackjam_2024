@@ -19,18 +19,17 @@ public class UIGamePlay : UIBase
     {
         ButtonPause.onClick.AddListener(Pause);
         isTimer = LevelManager.instance.isTimer;
-        if (isTimer)
-        { 
-            timer = LevelManager.instance.timerAmount;
-            timerText.gameObject.SetActive(true);
-            int minutes = Mathf.FloorToInt(timer / 60f);
-            int seconds = Mathf.FloorToInt(timer % 60f);
-            int milliseconds = Mathf.FloorToInt((timer * 100f) % 100f);
-
-            timerText.text = string.Format("{0:00}:{1:00}:{2:00}", minutes, seconds, milliseconds);
-            Debug.Log("Setted");
-        }
         UpdateStopwatchText(0f);
+    }
+    public void SetTimer() {
+        timerText.gameObject.SetActive(true);
+        timer = LevelManager.instance.timerAmount;
+        int minutes = Mathf.FloorToInt(timer / 60f);
+        int seconds = Mathf.FloorToInt(timer % 60f);
+        int milliseconds = Mathf.FloorToInt((timer * 100f) % 100f);
+
+        timerText.text = string.Format("{0:00}:{1:00}:{2:00}", minutes, seconds, milliseconds);
+        this.isTimer = true;
     }
 
     void Update()

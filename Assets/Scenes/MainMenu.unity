@@ -390,6 +390,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5886125912025223152, guid: 7a9d3506c67410747b7b68f89856eb01, type: 3}
+      propertyPath: soundEffects.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5886125912025223152, guid: 7a9d3506c67410747b7b68f89856eb01, type: 3}
+      propertyPath: soundEffects.Array.data[4].groupID
+      value: MachineDestroy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5886125912025223152, guid: 7a9d3506c67410747b7b68f89856eb01, type: 3}
+      propertyPath: soundEffects.Array.data[4].clips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5886125912025223152, guid: 7a9d3506c67410747b7b68f89856eb01, type: 3}
+      propertyPath: soundEffects.Array.data[4].clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 14c37faeb1c94c949b937eb8e7b03006, type: 3}
+    - target: {fileID: 7094566098182784882, guid: 7a9d3506c67410747b7b68f89856eb01, type: 3}
+      propertyPath: levelData.Array.data[0].isComplete
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7923554970197825537, guid: 7a9d3506c67410747b7b68f89856eb01, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
