@@ -25,8 +25,7 @@ public class Complete : MonoBehaviour
 
     private void CompleteStage()
     {
-        // Complete the stage
-        Debug.Log("Stage Completed!");
+        GameManager.instance.SetLevelComplete(true);
         UIManager.instance.ChangeUI(UI.VICTORY);
     }
 }

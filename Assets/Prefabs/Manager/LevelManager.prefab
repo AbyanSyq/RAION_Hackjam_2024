@@ -48,6 +48,7 @@ MonoBehaviour:
   is2D: 0
   camera2D: {fileID: 0}
   camera3D: {fileID: 0}
+  cameraCutScene: {fileID: 0}
 --- !u!1 &7272178656848721516
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,4 +98,10 @@ MonoBehaviour:
   player3D: {fileID: 0}
   player2D: {fileID: 0}
   mainCamera: {fileID: 0}
+  sceneData: 0
+  delayChange: 0.8
   is2D: 0
+  isTransitioning: 0
+  cameraManager: {fileID: 202895242126574927}
+  isHaveCutScene: 0
+  cutSceneDuration: 20

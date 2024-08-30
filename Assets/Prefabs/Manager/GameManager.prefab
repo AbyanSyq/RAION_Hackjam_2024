@@ -340,7 +340,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ffc28a12ee3eb642bc6de3e6d7f8bb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coin: 0
+  levelData:
+  - levelIndex: 0
+    isComplete: 0
+    record: 0
+  - levelIndex: 1
+    isComplete: 0
+    record: 0
+  - levelIndex: 2
+    isComplete: 0
+    record: 0
   currentScene: 0
+  levelIndex: 0
 --- !u!1 &3972516596417605391
 GameObject:
   m_ObjectHideFlags: 0

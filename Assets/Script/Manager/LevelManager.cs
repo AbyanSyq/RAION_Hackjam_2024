@@ -17,6 +17,14 @@ public class LevelManager : SingletonMonoBehaviour<LevelManager>
     [Header("Condition")]
     public bool is2D;
     public bool isTransitioning = false;
+    [Header("CutScene")]
+    public CameraManager cameraManager;
+    public bool isHaveCutScene = false;
+    public float cutSceneDuration;
+    public bool isCutSceneOn;
+    [Header("Timer")]
+    public bool isTimer = false;
+    public float timerAmount = 300;
 
     private void Start() {
         UIManager.instance.GetUIGamePlay().StopStopwatch();
@@ -27,11 +35,15 @@ public class LevelManager : SingletonMonoBehaviour<LevelManager>
         player3D = FindAnyObjectByType<Player3D>();
 
         StartCoroutine(To2D());
+        if (isHaveCutScene)
+        {
+            StartCoroutine(cameraManager.PlayCutScene(cutSceneDuration));
+        }
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !isTransitioning)
+        if (Input.GetKeyDown(KeyCode.Q) && !isTransitioning)
         {   
             changeState();
         }
@@ -77,5 +89,12 @@ public class LevelManager : SingletonMonoBehaviour<LevelManager>
 
         player3D.Activate(true);
         is2D = false;
+    }
+    public IEnumerator MachineDestroy(){
+        StartCoroutine(cameraManager.PlayCutScene(2));
+        yield return new WaitForSeconds(1f);
+        FindAnyObjectByType<MachineScript>()?.DestroyMachine();
+        yield return new WaitForSeconds(1f);
+        UIManager.instance.ChangeUI(UI.GAMEOVER);
     }
 }

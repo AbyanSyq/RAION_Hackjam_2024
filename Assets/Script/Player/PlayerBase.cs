@@ -7,7 +7,7 @@ public abstract class PlayerBase : MonoBehaviour
     [SerializeField] protected Animator animator;
     [Header("Movement")]
     [SerializeField] protected Vector3 direction;
-    [SerializeField] protected bool isActive;
+    [SerializeField] public bool isActive;
     [Header("Facing")]
     [SerializeField] protected bool isFacingRight = true;
     [SerializeField] protected Transform NeedToFlip;

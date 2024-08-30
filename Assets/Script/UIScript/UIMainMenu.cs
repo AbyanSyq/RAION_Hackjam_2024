@@ -6,11 +6,13 @@ public class UIMainMenu : UIBase
     [SerializeField] Button ButtonStart;
     [SerializeField] Button ButtonLevelMenu;
     [SerializeField] Button ButtonExit;
+    [SerializeField] Button ButtonReset;
     private void Awake()
     {
         ButtonStart.onClick.AddListener(StartGame);
         ButtonLevelMenu.onClick.AddListener(ToLevelMenu);
         ButtonExit.onClick.AddListener(ExitGame);
+        ButtonReset.onClick.AddListener(ResetData);
     }
 
     void StartGame()
@@ -34,5 +36,8 @@ public class UIMainMenu : UIBase
         // Save data or other cleanup code if necessary
         Application.Quit();
         Debug.Log("Game has been exited."); // Ini hanya akan terlihat di editor.
+    }
+    void ResetData(){
+        SaveLoadSystem.ResetData(3);
     }
 }

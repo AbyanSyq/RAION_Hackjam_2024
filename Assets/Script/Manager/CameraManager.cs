@@ -9,6 +9,7 @@ public class CameraManager : MultiDimentionBase
     [SerializeField] private bool is2D;
     public CinemachineVirtualCamera camera2D;
     public CinemachineVirtualCamera camera3D;
+    public CinemachineVirtualCamera cameraCutScene;
     private Coroutine transitionCoroutine;
 
     // Start is called before the first frame update
@@ -56,5 +57,17 @@ public class CameraManager : MultiDimentionBase
     {
         yield return new WaitForSeconds(0.4f);
         mainCamera.orthographic = is2D;
+    }
+    public IEnumerator PlayCutScene(float duration){
+        if (cameraCutScene != null)
+        {
+            cameraCutScene.Priority =50;
+            mainCamera.orthographic = true;
+            LevelManager.instance.isCutSceneOn = true;
+            yield return new WaitForSeconds(duration);
+            LevelManager.instance.isCutSceneOn = false;
+            mainCamera.orthographic = is2D;
+            cameraCutScene.Priority = 0;
+        }
     }
 }

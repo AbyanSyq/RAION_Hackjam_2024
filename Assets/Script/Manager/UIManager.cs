@@ -66,6 +66,10 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
         }else{
             GameManager.instance.PauseGame(false);
         }
+        if (toUI == UI.VICTORY)
+        {
+            complete.SetCurrentRecord(gamePlay.StopStopwatch());
+        }
         currentUI = toUI;
     }
     public void ShowUI(UI toUI)
@@ -136,5 +140,8 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
     }
     public UIGamePlay GetUIGamePlay(){
         return gamePlay;
+    }
+    public UIComplete GetUIComplete(){
+        return complete;
     }
 }
